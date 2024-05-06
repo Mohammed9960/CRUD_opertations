@@ -1,0 +1,11 @@
+package com.mohammed.librarynew;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface LibraryRepository extends JpaRepository<LibraryManagementSystem,Integer> {
+
+    LibraryManagementSystem findByBookContains(String bookName);
+    List<LibraryManagementSystem> findAllByAuthorContainsIgnoreCase(String author);
+}
